@@ -1,0 +1,14 @@
+server:
+  port: 8080
+
+spring:
+  application:
+    name: zuul-proxy-demo
+#  main:
+#    lazy-initialization: true # zuul routes return empty response when lazy-initialization is true
+
+zuul:
+  routes:
+    greeting-service:
+      path: /greeting/**
+      url: http://localhost:8081/api/greeting/
